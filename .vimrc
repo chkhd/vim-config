@@ -112,6 +112,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite.vim'
+Plug 'jnurmine/Zenburn'
+Plug 'akmassey/vim-codeschool'
 
 " Programming language specific plugins
 Plug 'maksimr/vim-jsbeautify', { 'do' : 'git submodule update --init --recursive' }
@@ -244,6 +246,7 @@ let g:used_javascript_libs = 'jquery,underscore,requirejs,chai,handlebars'
 
 " Apply Color scheme
 " color solarized
+colorscheme codeschool
 
 " Make switching light/dark theme easy
 call togglebg#map("<F5>")
