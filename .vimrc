@@ -182,6 +182,14 @@ let g:gitgutter_realtime = 1
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_highlight_lines = 1
 
+" you can use [c and ]c to navigate between the hunks in the file
+
+" ViMagit is a really nice alternative in certain cases
+nnoremap <leader>gf :MagitOnly<CR>
+
+" zo and zc can be used to open and close folds inside vimagit buffer
+" or in fact anywhere else you have folds, in normal mode
+
 " fugitive git bindings
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
