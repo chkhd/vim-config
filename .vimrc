@@ -177,7 +177,8 @@ let g:airline#extensions#wordcount#enabled = 0
 " Git gutter settings
 " On windows realtime does not work
 " also enable the line highlights
-let g:gitgutter_realtime = 0
+let g:gitgutter_realtime = 1
+
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_highlight_lines = 1
 
