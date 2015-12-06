@@ -1,14 +1,19 @@
-" Disable useless widgets
+" Widgets do nothing but distract you
+" Disable them to create more screen real estate
+" and to make GUI and terminal experience more similar
 :set guioptions-=m  "remove menu bar
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
 :set guioptions-=L  "remove left-hand scroll bar
 
-" Use a better font
+" Default font on Linux is nice, but if you want to use another one
+" Here is how you do it. Of course, you have to make sure the font
+" is installed first.
 " set guifont=Source_Code_Pro:h12
 " set guifont=Anonymous_Pro:h10
 
-" Essential things, like making sure we don't run in compatible mode
+" Essential things are configured here, things like disabling compatibility
+" Most of the statements are self explanatory
 set nocompatible
 set wrap
 syntax on
@@ -30,7 +35,9 @@ set clipboard=unnamedplus
 set foldmethod=manual
 set mouse=a
 set spelllang=en_us
-set nospell
+" set nospell
+" Check spelling in the comments and text files
+set spell
 set laststatus=2
 set title
 set splitbelow
