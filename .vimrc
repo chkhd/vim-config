@@ -121,6 +121,7 @@ Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'akmassey/vim-codeschool'
+Plug 'tpope/vim-dispatch'
 
 " Programming language specific plugins
 Plug 'maksimr/vim-jsbeautify', { 'do' : 'git submodule update --init --recursive' }
