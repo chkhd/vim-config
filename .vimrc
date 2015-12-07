@@ -176,6 +176,45 @@ let g:gitgutter_realtime = 0
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_highlight_lines = 1
 
+" Follow symlinks when opening a file {{{
+" NOTE: this happens with directory symlinks anyway (due to Vim's chdir/getcwd
+"       magic when getting filenames).
+" Sources:
+"  - https://github.com/tpope/vim-fugitive/issues/147#issuecomment-7572351
+"  - http://www.reddit.com/r/vim/comments/yhsn6/is_it_possible_to_work_around_the_symlink_bug/c5w91qw
+function! MyFollowSymlink(...)
+  if exists('w:no_resolve_symlink') && w:no_resolve_symlink
+    return
+  endif
+  let fname = a:0 ? a:1 : expand('%')
+  if fname =~ '^\w\+:/'
+    " Do not mess with 'fugitive://' etc.
+    return
+  endif
+  let fname = simplify(fname)
+
+  let resolvedfile = resolve(fname)
+  if resolvedfile == fname
+    return
+  endif
+  let resolvedfile = fnameescape(resolvedfile)
+  let sshm = &shm
+  set shortmess+=A  " silence ATTENTION message about swap file (would get displayed twice)
+  exec 'file ' . resolvedfile
+  let &shm=sshm
+
+  " Re-init fugitive.
+  call fugitive#detect(resolvedfile)
+  if &modifiable
+    " Only display a note when editing a file, especially not for `:help`.
+    redraw  " Redraw now, to avoid hit-enter prompt.
+    echomsg 'Resolved symlink: =>' resolvedfile
+  endif
+endfunction
+command! FollowSymlink call MyFollowSymlink()
+command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>" w:no_resolve_symlink
+au BufReadPost * nested call MyFollowSymlink(expand('%'))
+
 " fugitive git bindings
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
