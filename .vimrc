@@ -116,7 +116,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/paredit.vim'
 Plug 'bling/vim-airline'
 Plug 'akmassey/vim-codeschool'
-Plug 'https://github.com/kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 
 " Programming language specific plugins
