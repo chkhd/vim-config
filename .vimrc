@@ -174,7 +174,7 @@ let g:airline#extensions#wordcount#enabled = 0
 " also enable the line highlights
 let g:gitgutter_realtime = 0
 let g:gitgutter_sign_column_always = 1
-let g:gitgutter_highlight_lines = 1
+let g:gitgutter_highlight_lines = 0
 
 " Follow symlinks when opening a file {{{
 " NOTE: this happens with directory symlinks anyway (due to Vim's chdir/getcwd
