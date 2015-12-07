@@ -247,8 +247,7 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 let g:used_javascript_libs = 'jquery,underscore,requirejs,chai,handlebars'
 
 " Apply Color scheme
-" color solarized
-colorscheme codeschool
+color codeschool
 
 " Make switching light/dark theme easy
 " call togglebg#map("<F5>")
