@@ -111,11 +111,10 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/paredit.vim'
 Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized'
-Plug 'Shougo/vimproc.vim'
-Plug 'Shougo/neomru.vim'
-Plug 'Shougo/unite.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'akmassey/vim-codeschool'
+Plug 'https://github.com/kien/ctrlp.vim'
+Plug 'jiangmiao/auto-pairs'
 
 " Programming language specific plugins
 Plug 'maksimr/vim-jsbeautify', { 'do' : 'git submodule update --init --recursive' }
