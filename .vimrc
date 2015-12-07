@@ -118,6 +118,7 @@ Plug 'bling/vim-airline'
 Plug 'akmassey/vim-codeschool'
 Plug 'kien/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'int3/vim-extradite'
 
 " Programming language specific plugins
 Plug 'maksimr/vim-jsbeautify', { 'do' : 'git submodule update --init --recursive' }
@@ -222,7 +223,8 @@ nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gw :Gwrite<CR><CR>
-nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <leader>gl :Extradite<CR>
+nnoremap <leader>gll :silent! Glog<CR>:bot copen<CR>
 nnoremap <leader>gp :Ggrep<Space>
 nnoremap <leader>gm :Gmove<Space>
 nnoremap <leader>gb :Git branch<Space>
