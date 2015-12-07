@@ -251,7 +251,7 @@ let g:used_javascript_libs = 'jquery,underscore,requirejs,chai,handlebars'
 colorscheme codeschool
 
 " Make switching light/dark theme easy
-call togglebg#map("<F5>")
+" call togglebg#map("<F5>")
 
 " Force filetype
 autocmd BufRead,BufNewFile .eslintrc setfiletype json
