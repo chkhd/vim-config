@@ -1,3 +1,5 @@
+set nocompatible " This must be first, because it changes other options as a side effect.
+
 " Disable useless widgets
 :set guioptions-=m  "remove menu bar
 :set guioptions-=T  "remove toolbar
@@ -8,11 +10,12 @@
 " set guifont=Source_Code_Pro:h12
 " set guifont=Anonymous_Pro:h10
 
-" Essential things, like making sure we don't run in compatible mode
-set nocompatible
-set wrap
+" Essential things
+
+set hidden " Without this, every buffer is closed when another one is opened
+set nowrap
 syntax on
-set background=light
+set background=dark
 set t_Co=256
 set smartindent
 set autoindent
@@ -30,13 +33,12 @@ set clipboard=unnamedplus
 set foldmethod=manual
 set mouse=a
 set spelllang=en_us
-set nospell
-set laststatus=2
-set title
-set splitbelow
+set spell " Detect spelling mistakes in text mode buffers and in comments
+set laststatus=2 " Always show the status line
+set title " Display the path in the window title
+set splitbelow " Default location where splits should occur
 set encoding=utf-8
-" Uncomment the line below if you want line numbers
-" set number
+set number " Comment this out if you do not want line numbers on by default
 
 filetype plugin indent on
 
