@@ -263,4 +263,15 @@ autocmd BufRead,BufNewFile .jshintrc setfiletype json
 "autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+" Automatically remove trailing whitespace on save
+function! StripTrailingWhitespace()
+  normal mZ
+  let l:chars = col("$")
+  %s/\s\+$//e
+  if (line("'Z") != line(".")) || (l:chars != col("$"))
+    echo "Trailing whitespace stripped\n"
+  endif
+  normal `Z
+endfunction
 
+autocmd BufWritePre * :call StripTrailingWhitespace()
