@@ -138,6 +138,14 @@ call plug#end()
 
 " Configure plugins
 
+" Finding files, switching buffers, easy mode
+let g:ctrlp_map = ''
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>r :CtrlPMRU<CR>
+" Ignore files that are in .gitignore
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 " Airline configuration
 let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
