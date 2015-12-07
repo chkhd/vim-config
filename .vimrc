@@ -1,12 +1,17 @@
 set nocompatible " This must be first, because it changes other options as a side effect.
 
 " Disable useless widgets
+" Widgets do nothing but distract you
+" Disable them to create more screen real estate
+" and to make GUI and terminal experience more similar
 :set guioptions-=m  "remove menu bar
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
 :set guioptions-=L  "remove left-hand scroll bar
 
-" Use a better font
+" Default font on Linux is nice, but if you want to use another one
+" Here is how you do it. Of course, you have to make sure the font
+" is installed first.
 " set guifont=Source_Code_Pro:h12
 " set guifont=Anonymous_Pro:h10
 
@@ -110,8 +115,6 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/paredit.vim'
 Plug 'bling/vim-airline'
-Plug 'altercation/vim-colors-solarized'
-Plug 'jnurmine/Zenburn'
 Plug 'akmassey/vim-codeschool'
 Plug 'https://github.com/kien/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -158,7 +161,8 @@ let g:airline#extensions#wordcount#enabled = 0
 " Git gutter settings
 " On windows realtime does not work
 " also enable the line highlights
-let g:gitgutter_realtime = 0
+let g:gitgutter_realtime = 1
+
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_highlight_lines = 0
 
@@ -201,6 +205,14 @@ command! FollowSymlink call MyFollowSymlink()
 command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>" w:no_resolve_symlink
 au BufReadPost * nested call MyFollowSymlink(expand('%'))
 
+" you can use [c and ]c to navigate between the hunks in the file
+
+" ViMagit is a really nice alternative in certain cases
+nnoremap <leader>gf :MagitOnly<CR>
+
+" zo and zc can be used to open and close folds inside vimagit buffer
+" or in fact anywhere else you have folds, in normal mode
+
 " fugitive git bindings
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
@@ -215,8 +227,8 @@ nnoremap <leader>gp :Ggrep<Space>
 nnoremap <leader>gm :Gmove<Space>
 nnoremap <leader>gb :Git branch<Space>
 nnoremap <leader>go :Git checkout<Space>
-nnoremap <leader>gps :Dispatch! git push<CR>
-nnoremap <leader>gpl :Dispatch! git pull<CR>
+nnoremap <leader>gps :Git push<CR>
+nnoremap <leader>gpl :Git pull<CR>
 
 " EditorConfig
 " to avoid issues with fugitive
