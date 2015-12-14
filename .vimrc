@@ -120,6 +120,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'kien/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'int3/vim-extradite'
+Plug 'nelstrom/vim-markdown-folding'
 
 " Programming language specific plugins
 Plug 'maksimr/vim-jsbeautify', { 'do' : 'git submodule update --init --recursive' }
