@@ -135,6 +135,7 @@ Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 Plug 'moll/vim-node'
 Plug 'syngan/vim-vimlint'
 Plug 'ynkdir/vim-vimlparser'
+Plug 'adampasz/vim-stonewashed'
 
 call plug#end()
 
@@ -300,8 +301,11 @@ let g:used_javascript_libs = 'jquery,underscore,requirejs,chai,handlebars'
 
 " solarized specific
 " Make switching light/dark theme easy
-color solarized
-call togglebg#map("<F5>")
+" color solarized
+" call togglebg#map("<F5>")
+
+" Color scheme for lighter feel
+color stonewashed-256
 
 " Force filetype
 autocmd BufRead,BufNewFile .eslintrc setfiletype json
