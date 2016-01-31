@@ -121,7 +121,6 @@ Plug 'akmassey/vim-codeschool'
 Plug 'kien/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'int3/vim-extradite'
-Plug 'nelstrom/vim-markdown-folding'
 
 " Programming language specific plugins
 Plug 'maksimr/vim-jsbeautify', { 'do' : 'git submodule update --init --recursive' }
@@ -148,8 +147,6 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>r :CtrlPMRU<CR>
 " Ignore files that are in .gitignore
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-set background=dark
 
 if has('gui_running')
   color solarized
