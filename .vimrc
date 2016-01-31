@@ -154,15 +154,17 @@ if has('gui_running')
 endif
 
 " Airline configuration
+if has('gui_running')
+  let g:airline_theme = "solarized"
+endif
+
 let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Disable filename in the status line, it is already shown at the top
 let g:airline_section_c = '%t'
 
-let g:airline_powerline_fonts = 0
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
