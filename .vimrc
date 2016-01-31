@@ -114,9 +114,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/paredit.vim'
-Plug 'bling/vim-airline'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'akmassey/vim-codeschool'
-"Plug 'altercation/vim-colors-solarized'
 Plug 'kien/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'int3/vim-extradite'
@@ -130,12 +131,11 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'othree/html5.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 Plug 'moll/vim-node'
 Plug 'syngan/vim-vimlint'
 Plug 'ynkdir/vim-vimlparser'
-"Plug 'adampasz/vim-stonewashed'
 
 call plug#end()
 
@@ -148,6 +148,13 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>r :CtrlPMRU<CR>
 " Ignore files that are in .gitignore
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+set background=dark
+
+if has('gui_running')
+  color solarized
+  call togglebg#map("<F5>")
+endif
 
 " Airline configuration
 let g:airline#extensions#tabline#enabled = 0
@@ -291,21 +298,9 @@ autocmd FileType css nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
-
 " Javascript libraries syntax
 
 let g:used_javascript_libs = 'jquery,underscore,requirejs,chai,handlebars'
-
-" Apply Color scheme
-" color codeschool
-
-" solarized specific
-" Make switching light/dark theme easy
-" color solarized
-" call togglebg#map("<F5>")
-
-" Color scheme for lighter feel
-"color stonewashed-256
 
 " Force filetype
 autocmd BufRead,BufNewFile .eslintrc setfiletype json
