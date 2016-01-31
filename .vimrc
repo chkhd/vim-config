@@ -13,7 +13,14 @@ set nocompatible " This must be first, because it changes other options as a sid
 " Here is how you do it. Of course, you have to make sure the font
 " is installed first.
 " set guifont=Source_Code_Pro:h12
-" set guifont=Anonymous_Pro:h10
+
+" Need powerline symbols
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    set guifont=Anonymous_Pro_for_Powerline:h14
+  endif
+endif
 
 " Essential things
 
